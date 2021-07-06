@@ -5,6 +5,5 @@ toc: true
 
 <div class="flex h-full">
   {% include sidebar.html %}
-  <article class="prose lg:prose-xl flex-grow mx-2 mt-5 lg:mx-20">{{ page.document.content | markdownify }}</article>
-  {% include rightbar.html %}
+  <article class="prose lg:prose-xl flex-grow mx-2 mt-5 lg:mx-20">{{ page.document.content | markdownify | toc }}</article>
 </div>
