@@ -1,0 +1,28 @@
+<nav class="flex w-full h-full">
+  <div class="w-full flex py-8">
+    <div class="w-full h-full flex text-xl border-r">
+      {%- if strapi.collections.topics.size > 0 -%}
+      <ul>
+        {%- for topic in strapi.collections.topics -%}
+        <l1>
+          <div class="text-lg font-semibold pb-1 pt-2 text-gray-600">
+            {{ topic.title }}
+          </div>
+          <div>
+            {%- for documentation in topic.documentations -%}
+            <div>
+              <a
+                href="/documentations/{{ documentation.title }}"
+                class="text-sm px-2 text-gray-600 active:bg-green-700"
+                >{{ documentation.title }}</a
+              >
+            </div>
+            {%- endfor -%}
+          </div>
+        </l1>
+        {%- endfor -%}
+      </ul>
+      {%- endif -%}
+    </div>
+  </div>
+</nav>

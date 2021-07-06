@@ -2,4 +2,29 @@
 layout: default
 ---
 
-<h1 class="text-white text-4xl font-semibold">Jekyll Starter Tailwind</h1>
+<div>
+  <h1 class="flex justify-center text-blue-500 text-4xl font-semibold lg:mt-20">
+    Jekyll Website
+  </h1>
+  <p class="flex justify-center text-md font-semibold mt-2">
+    Documentation and Blog that you can trust.
+  </p>
+  <div class="flex mt-10">
+    <form class="flex justify-center container">
+      <button
+        formaction="/documentations/Introduction"
+        class="text-lg text-white bg-gray-800 w-1/2 py-10 rounded shadow-lg"
+      >
+        Get Started
+      </button>
+    </form>
+    <form class="flex justify-center container">
+      <button
+        formaction="/pages/blog"
+        class="text-lg text-white bg-gray-800 w-1/2 py-10 rounded shadow-lg"
+      >
+        What's new
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+---
+layout: default
+---
+
+<div
+  class="
+    bg-white
+    my-12
+    pb-6
+    w-full
+    overflow-hidden
+    rounded-lg
+    shadow-sm
+    mx-auto
+  "
+>
+  <div class="relative h-40">
+    <img
+      class="absolute h-full w-full object-cover"
+      src="http://localhost:1337{{ page.document.Image.url }}"
+    />
+  </div>
+  <div
+    class="
+      relative
+      shadow
+      mx-auto
+      h-24
+      w-24
+      -my-12
+      border-white
+      rounded-full
+      overflow-hidden
+      border-4
+    "
+  >
+    <img
+      class="object-cover w-full h-full"
+      src="http://localhost:1337{{ page.document.Image.url }}"
+    />
+  </div>
+  <div class="mt-16">
+    <h1 class="text-2xl text-center font-semibold">{{ page.document.Name }}</h1>
+    <p class="text-lg text-gray-600 text-center">{{ page.document.Bio }}</p>
+  </div>
+  <div class="mt-6 pt-3 border-t">
+    <h1 class="text-4xl font-bold flex justify-center text-grey-600">
+      Blog Posts
+    </h1>
+    {%- if page.document.blogs.size > 0 -%}
+    <ul>
+      {%- for blog in page.document.blogs -%}
+      <li class="mb-10">
+        <div class="max-w-4xl px-10 py-6 mx-auto bg-white rounded-lg shadow-md">
+          <div class="flex items-center justify-between">
+            <span class="font-light text-gray-600"
+              >{{ blog.publishedAt | date_to_string }}</span
+            ><a
+              href="/blogs{{ blog.slug | relative_url }}"
+              class="px-2 py-1 font-bold rounded text-blue-500 hover:underline"
+              >Read more</a
+            >
+          </div>
+          <div class="mt-2">
+            <a href="#" class="text-2xl font-bold text-gray-700 hover:underline"
+              >{{ blog.title }}</a
+            >
+            <p class="mt-2 text-gray-600">{{ blog.description }}</p>
+          </div>
+        </div>
+      </li>
+      {%- endfor -%}
+    </ul>
+    {%- endif -%}
+  </div>
+</div>

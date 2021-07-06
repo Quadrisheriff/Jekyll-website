@@ -1,12 +1,16 @@
----
----
-
-{% include header.html %}
-
-<main
-  class="bg-indigo-500 flex h-screen items-center justify-center w-full"
->
-  {{ content }}
-</main>
-
-{% include footer.html %}
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css" />
+  </head>
+  <body>
+    <section>
+      <div class="flex flex-col h-screen">
+        {% include header.html %}
+        <div class="flex-grow mx-2 mt-5 lg:mx-20">{{ content }}</div>
+        {% include footer.html %}
+      </div>
+    </section>
+  </body>
+</html>

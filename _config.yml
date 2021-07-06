@@ -13,3 +13,39 @@ exclude:
   - src
   - tailwind.config.js
   - netlify.toml
+
+plugins:
+  - jekyll-strapi
+  - jekyll-toc
+
+strapi:
+  # Your API endpoint (optional, default to http://localhost:1337)
+  endpoint: http://localhost:1337
+  # Collections, key is used to access in the strapi.collections
+  # template variable
+  collections: 
+    # Example for a "blogs" collection
+    blogs:
+      # Collection name (optional)
+      type: blogs
+    blog:
+      # Collection name (optional)
+      type: blogs
+      permalink: "/blogs/:slug/"
+      layout: blog.html
+      output: true
+    author:
+      # Collection name (optional)
+      type: authors
+      permalink: "/author/:Name/"
+      layout: author.html
+      output: true
+    topics:
+      # Collection name (optional)
+      type: topics
+    documentation:
+      # Collection name (optional)
+      type: documentations
+      permalink: "/documentations/:title/"
+      layout: documentation.html
+      output: true
